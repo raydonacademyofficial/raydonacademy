@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Raydon Academy</title>
+  <link rel="icon" href="images/RaydonAcademyGlobalSchool.png" type="image/png">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+    body {
+      font-family: 'Poppins', sans-serif;
+      scroll-behavior: smooth;
+      font-size: 1.05rem; /* bump text size */
+    }
+    .dropdown:hover .dropdown-menu {
+      display: block;
+    }
+    .service-card {
+      transition: transform .3s, box-shadow .3s;
+    }
+    .service-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 25px rgba(0,0,0,0.12);
+    }
+    .emergency-banner {
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0% { background-color: #ef4444; }
+      50% { background-color: #dc2626; }
+      100% { background-color: #ef4444; }
+    }
+    .logo-circle {
+      width: 50px;
+      height: 50px;
+      background-color: #3b82f6;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    .logo-cross {
+      color: white;
+      font-size: 22px;
+    }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-700">
+
+<!-- Navigation -->
+<nav class="bg-white shadow-md sticky top-0 z-50">
+  <div class="max-w-7xl mx-auto px-4">
+    <div class="flex justify-between items-center h-16">
+
+      <!-- Logo -->
+      <a href="#home" class="flex items-center">
+        <div class="logo-circle mr-2">
+          <img src="images/RaydonAcademyGlobalSchool.png" alt="Raydon Academy Logo" class="h-full w-full object-cover">
+        </div>
+        <span class="text-2xl font-bold text-blue-600">Raydon Academy</span>
+      </a>
+
+      <!-- Desktop Nav -->
+      <div class="hidden md:flex items-center space-x-6">
+        <a href="#home" class="relative font-medium px-2 py-2 after:block after:h-0.5 after:w-0 after:bg-current hover:after:w-full after:transition-all after:duration-200">Home</a>
+        <a href="#our-services" class="relative font-medium px-2 py-2 after:block after:h-0.5 after:w-0 after:bg-current hover:after:w-full after:transition-all after:duration-200">Our Services</a>
+        <a href="#why-us" class="relative font-medium px-2 py-2 after:block after:h-0.5 after:w-0 after:bg-current hover:after:w-full after:transition-all after:duration-200">Why Us</a>
+        <a href="#about-us" class="relative font-medium px-2 py-2 after:block after:h-0.5 after:w-0 after:bg-current hover:after:w-full after:transition-all after:duration-200">About Us</a>
+        <a href="#contact-us" class="relative font-medium px-2 py-2 after:block after:h-0.5 after:w-0 after:bg-current hover:after:w-full after:transition-all after:duration-200">Contact Us</a>
+
+        <!-- Dropdown -->
+        <div class="relative group">
+          <button class="font-medium px-2 py-2 flex items-center space-x-1">
+            <span>Other Forms</span>
+            <i class="fa-solid fa-chevron-down text-sm"></i>
+          </button>
+          <div class="absolute hidden group-hover:block bg-white shadow-lg rounded-lg mt-2 py-2 w-48">
+            <a href="https://forms.gle/pzEsLCzxvQA63eZAA" class="block px-4 py-2 hover:bg-gray-100">Apply As Teacher</a>
+            <a href="https://forms.gle/rzcf26sjJhtEzqwm6" class="block px-4 py-2 hover:bg-gray-100">English Language Courses</a>
+          </div>
+        </div>
+
+        <!-- Enroll Button -->
+        <a href="#enrollment" class="inline-flex items-center justify-center bg-blue-800 text-white px-4 py-2 rounded-full hover:bg-purple-800 hover:scale-110 transition transform shadow-md hover:shadow-lg font-bold">
+          Enroll Today
+        </a>
+      </div>
+    </div>
+  </div>
+
+      <!-- Mobile menu button -->
+      <div class="md:hidden flex items-center">
+        <button class="mobile-menu-button p-2">
+          <svg class="h-6 w-6 text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+              d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile menu -->
+  <div class="mobile-menu hidden md:hidden bg-white shadow-lg px-4 py-3 space-y-2">
+    <a href="#home" class="relative font-medium px-2 py-2 after:block after:h-0.5 after:w-0 after:bg-current hover:after:w-full after:transition-all after:duration-200">Home</a>
+    <a href="#our-services" class="relative font-medium px-2 py-2 after:block after:h-0.5 after:w-0 after:bg-current hover:after:w-full after:transition-all after:duration-200">Our Services</a>
+    <a href="#why-us" class="relative font-medium px-2 py-2 after:block after:h-0.5 after:w-0 after:bg-current hover:after:w-full after:transition-all after:duration-200">Why Us</a>
+    <a href="#about-us" class="relative font-medium px-2 py-2 after:block after:h-0.5 after:w-0 after:bg-current hover:after:w-full after:transition-all after:duration-200">About Us</a>
+    <a href="#contact-us" class="relative font-medium px-2 py-2 after:block after:h-0.5 after:w-0 after:bg-current hover:after:w-full after:transition-all after:duration-200">Contact Us</a>
+    <a href="https://forms.gle/pzEsLCzxvQA63eZAA" class="relative font-medium px-2 py-2 after:block after:h-0.5 after:w-0 after:bg-current hover:after:w-full after:transition-all after:duration-200">Apply As Teacher</a>
+    <a href="https://forms.gle/rzcf26sjJhtEzqwm6" class="relative font-medium px-2 py-2 after:block after:h-0.5 after:w-0 after:bg-current hover:after:w-full after:transition-all after:duration-200">English Language Courses</a>
+    <a href="#enrollment" class="inline-flex items-center justify-center bg-blue-800 text-white px-4 py-2 rounded-full hover:bg-purple-800 hover:scale-110 transition transform shadow-md hover:shadow-lg font-bold">Enroll Today</a>
+  </div>
+</nav>
+
+<!-- Hero Section -->
+<section id="home" class="bg-blue-50 py-20">
+  <div class="max-w-7xl mx-auto px-6 lg:px-8 flex flex-col md:flex-row items-center">
+    <div class="md:w-1/2 text-center md:text-left mb-10 md:mb-0">
+      <h1 class="text-4xl md:text-5xl font-bold text-gray-800 mb-4 leading-tight">
+        Welcome To<br> <span class="text-blue-600">Raydon Academy.</span>
+      </h1>
+      <p class="text-lg text-gray-600 mb-8">
+        Raydon Academy is a world-class online school, shaping futures through quality education, innovation, and care. Our academy offers personalized learning for students of all levels, focusing on academic excellence, creativity, and character development. With dedicated teachers, modern resources, and a nurturing environment, we guide every learner to unlock their full potential and achieve success in school and beyond.
+      </p>
+      <div class="flex flex-wrap justify-center md:justify-start gap-4">
+        <a href="#enrollment" class="inline-flex items-center justify-center bg-blue-800 text-white px-4 py-2 rounded-full hover:bg-purple-800 hover:scale-110 transition transform shadow-md hover:shadow-lg font-bold">Enroll Today</a>
+        <a href="#our-services" class="inline-flex items-center justify-center text-blue-800 px-4 py-2 rounded-full border-2 border-blue-800 hover:border-purple-800 hover:text-purple-800 hover:scale-110 transition transform shadow-md hover:shadow-lg font-bold">Our Services</a>
+      </div>
+    </div>
+    <div class="md:w-1/2 flex justify-center">
+      <img src="images/RAourvirtualclassroom.png" alt="Virtual Classroom" class="rounded-lg shadow-xl">
+    </div>
+  </div>
+</section>
+
+<!-- Services Section -->
+<section id="our-services" class="py-20 bg-gray-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl font-bold text-gray-800 mb-4">Our Educational Services</h2>
+      <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+        We offer comprehensive education beyond the national curriculum, meeting international standards.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+      <!-- Card -->
+      <div class="service-card bg-purple-200 p-6 rounded-lg shadow-md flex flex-col items-center text-center">
+        <i class="fa-solid fa-book text-blue-800 text-4xl mb-4"></i>
+        <h3 class="text-xl font-bold text-gray-800 mb-3">English Version Section</h3>
+        <p class="text-gray-600">
+          At Raydon Academy, our school builds a strong foundation in English for our national curriculum. Classes: Class (1 – 9) Curriculum: Aligned with international standards Subjects Offered: All subjects offered by Bangladesh National Curriculum Board.
+        </p>
+      </div>
+
+      <div class="service-card bg-purple-200 p-6 rounded-lg shadow-md flex flex-col items-center text-center">
+        <i class="fa-solid fa-book-atlas text-blue-800 text-4xl mb-4"></i>
+        <h3 class="text-xl font-bold text-gray-800 mb-3">English Medium Section</h3>
+        <p class="text-gray-600">
+          Our English Medium Section (Std 1 – Std 8) provides a strong academic base with international standards Subjects Offered: English, Mathematics, Physics, Chemistry, Biology, Social Studies, ICT, Bangla, Islamic Studies and Moral Education.
+        </p>
+      </div>
+
+      <div class="service-card bg-purple-200 p-6 rounded-lg shadow-md flex flex-col items-center text-center">
+        <i class="fa-solid fa-book-open-reader text-blue-800 text-4xl mb-4"></i>
+        <h3 class="text-xl font-bold text-gray-800 mb-3">O Level (Cambridge & Edexcel)</h3>
+        <p class="text-gray-600">
+          We offer a world-class O Level program under both Cambridge Assessment International Education (CAIE) and Pearson Edexcel boards, ensuring global recognition and academic excellence. Boards Offered: Cambridge (CAIE) & Edexcel Subjects Offered: Core: English Language, Mathematics, Physics, Chemistry, Biology. Optional: Business Studies, Accounting, ICT, Economics and Geography.
+        </p>
+      </div>
+
+      <div class="service-card bg-purple-200 p-6 rounded-lg shadow-md flex flex-col items-center text-center">
+        <i class="fa-solid fa-graduation-cap text-blue-800 text-4xl mb-4"></i>
+        <h3 class="text-xl font-bold text-gray-800 mb-3">A Level (Cambridge & Edexcel)</h3>
+        <p class="text-gray-600">
+          Our A Level program (Cambridge & Edexcel) provides advanced academic training and prepares students for top universities worldwide. Classes: A Level (Grade 11 – Grade 12) Boards Offered: Cambridge (CAIE) & Pearson Edexcel Subjects Offered: Science Stream: Physics, Chemistry, Biology, Mathematics, Further Mathematics, ICT. Business & Humanities Stream: Business Studies, Economics, Accounting, Law, Psychology, Sociology Language & Additional: English Language, Extensive practice with past papers & timed mock exams
+        </p>
+      </div>
+
+      <div class="service-card bg-purple-200 p-6 rounded-lg shadow-md flex flex-col items-center text-center">
+        <i class="fa-solid fa-language text-blue-800 text-4xl mb-4"></i>
+        <h3 class="text-xl font-bold text-gray-800 mb-3">English Language Training</h3>
+        <p class="text-gray-600">
+          We believe that mastering English opens doors to global opportunities. Our English Language Training programs are designed to help learners of all levels - from beginners to advanced - build strong communication, writing, and comprehension skills for both academic and professional success. What We Offer - Spoken English Training: Improve fluency, pronunciation, and confidence in daily and professional conversations. Grammar & Vocabulary Mastery: Learn essential grammar rules and enrich your vocabulary for accurate and effective communication. Business English: Develop strong English skills for meetings, presentations, and workplace communication.
+        </p>
+      </div>
+
+      <div class="service-card bg-purple-200 p-6 rounded-lg shadow-md flex flex-col items-center text-center">
+        <i class="fa-solid fa-chalkboard-user text-blue-800 text-4xl mb-4"></i>
+        <h3 class="text-xl font-bold text-gray-800 mb-3">Academic English</h3>
+        <p class="text-gray-600">
+          Prepare for exams, essays, and international study requirements. IELTS & English Proficiency Test Preparation: Get expert guidance and practice for top scores. Why Choose Our English Training: Expert and friendly trainers with real classroom and corporate experience. Practical, interactive, and fun learning sessions. Customized lessons for children, students, and professionals. Online and in-person classes available. Affordable fees with flexible class schedules. Our goal is to help every learner speak, write, and think in English with confidence - turning language learning into a life-changing skill.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Why Choose Us Section -->
+<section id="why-choose-us" class="py-20 bg-gray-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Section Heading -->
+    <div class="text-center mb-16">
+      <h2 class="text-3xl font-bold text-gray-800 mb-4">Why Choose Raydon Academy</h2>
+      <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+        Here are the 10 reasons why you should choose us:
+      </p>
+    </div>
+
+    <!-- 3-column grid -->
+    <div class="grid gap-8 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 justify-center">
+
+      
+      <!-- Box 1 -->
+      <div class="bg-blue-200 p-6 rounded-lg flex flex-col items-center text-center">
+          <i class="fa-solid fa-book-open text-purple-800 text-4xl mb-4"></i>
+        <h3 class="text-xl font-bold text-gray-800 mb-3">Quality Education Within Reach</h3>
+        <p class="text-gray-600">
+          We offer minimal admission and tuition fees for both English Version and Medium. Affordable learning ensures every student gets equal access to opportunity. At Raydon, quality education never comes with a heavy price tag.
+        </p>
+      </div>
+
+      <!-- Box 2 -->
+      <div class="bg-blue-200 p-6 rounded-lg flex flex-col items-center text-center">
+          <i class="fa-solid fa-seedling text-purple-800 text-4xl mb-4"></i>
+        <h3 class="text-xl font-bold text-gray-800 mb-3">Learning That Adapts to You</h3>
+        <p class="text-gray-600">
+          We deliver world-class education designed around each student’s strengths and pace. Our personalized approach makes learning effective, enjoyable, and stress-free. Because every learner deserves an education that fits them.
+        </p>
+      </div>
+
+      <!-- Box 3 -->
+      <div class="bg-blue-200 p-6 rounded-lg flex flex-col items-center text-center">
+          <i class="fa-solid fa-handshake text-purple-800 text-4xl mb-4"></i>
+        <h3 class="text-xl font-bold text-gray-800 mb-3">Teachers Who Truly Care</h3>
+        <p class="text-gray-600">
+          Our teachers are qualified, dedicated, and passionate about your success. They guide, mentor, and inspire students inside and beyond the classroom. At Raydon, you’re never just taught - you’re supported.
+        </p>
+      </div>
+
+      <!-- Box 4 -->
+      <div class="bg-blue-200 p-6 rounded-lg flex flex-col items-center text-center">
+          <i class="fa-solid fa-brain text-purple-800 text-4xl mb-4"></i>
+        <h3 class="text-xl font-bold text-gray-800 mb-3">Shaping Minds and Values</h3>
+        <p class="text-gray-600">
+          We nurture both academic excellence and strong moral character. Students learn to think critically, act responsibly, and lead with empathy. Because success means nothing without integrity.
+        </p>
+      </div>
+
+      <!-- Box 5 -->
+      <div class="bg-blue-200 p-6 rounded-lg flex flex-col items-center text-center">
+          <i class="fa-solid fa-bolt text-purple-800 text-4xl mb-4"></i>
+        <h3 class="text-xl font-bold text-gray-800 mb-3">Modern Methods, Meaningful Learning</h3>
+        <p class="text-gray-600">
+          Our modern teaching techniques make lessons interactive and exciting. Students explore, question, and truly understand what they learn. Education at Raydon is engaging, not exhausting.
+        </p>
+      </div>
+
+      <!-- Box 6 -->
+      <div class="bg-blue-200 p-6 rounded-lg flex flex-col items-center text-center">
+          <i class="fa-solid fa-rocket text-purple-800 text-4xl mb-4"></i>
+        <h3 class="text-xl font-bold text-gray-800 mb-3">Confidence That Lasts a Lifetime</h3>
+        <p class="text-gray-600">
+          Students develop confidence, communication, and leadership skills daily. Through activities and teamwork, they grow both socially and academically. We shape voices that stand out - and stand strong.
+        </p>
+      </div>
+
+      <!-- Box 7 -->
+      <div class="bg-blue-200 p-6 rounded-lg flex flex-col items-center text-center">
+          <i class="fa-solid fa-house text-purple-800 text-4xl mb-4"></i>
+        <h3 class="text-xl font-bold text-gray-800 mb-3">A Place You Can Belong</h3>
+        <p class="text-gray-600">
+          We provide a safe, supportive, and inspiring learning environment. Respect, care, and encouragement define our school culture. Raydon Academy feels less like school - and more like home.
+        </p>
+      </div>
+
+      <!-- Box 8 -->
+      <div class="bg-blue-200 p-6 rounded-lg flex flex-col items-center text-center">
+          <i class="fa-solid fa-desktop text-purple-800 text-4xl mb-4"></i>
+        <h3 class="text-xl font-bold text-gray-800 mb-3">Classrooms Built for Tomorrow</h3>
+        <p class="text-gray-600">
+          Technology-enhanced classrooms bring lessons to life every day. Digital tools prepare students for success in a modern world. We don’t just teach the future - we build it.
+        </p>
+      </div>
+
+      <!-- Box 9 -->
+      <div class="bg-blue-200 p-6 rounded-lg flex flex-col items-center text-center">
+          <i class="fa-solid fa-bullseye text-purple-800 text-4xl mb-4"></i>
+        <h3 class="text-xl font-bold text-gray-800 mb-3">Every Step, Carefully Tracked</h3>
+        <p class="text-gray-600">
+          Regular progress tracking helps students stay on top of their goals. Teachers and parents work together to ensure steady growth. No learner is left behind - ever.
+        </p>
+      </div>
+
+      <!-- Box 10 -->
+      <div class="bg-white p-6 rounded-lg flex flex-col items-center text-center">
+      </div>
+
+      <!-- Box 11 -->
+      <div class="bg-blue-200 p-6 rounded-lg flex flex-col items-center text-center">
+          <i class="fa-solid fa-globe text-purple-800 text-4xl mb-4"></i>
+        <h3 class="text-xl font-bold text-gray-800 mb-3">Beyond Exams, Into Life</h3>
+        <p class="text-gray-600">
+          We prepare students to think, create, and lead beyond the classroom. Our lessons focus on real-life readiness, not just test scores. At Raydon Academy, we shape learners for life, not just exams.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Leaders Section -->
+<section id="our-leadership" class="py-20 bg-gray-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-16">
+    <h2 class="text-3xl font-bold text-gray-800 mb-4">Meet Our Leadership</h2>
+  </div>
+
+  <div class="flex flex-wrap justify-center gap-8">
+
+    <div class="bg-purple-200 rounded-lg shadow-md overflow-hidden text-center w-full sm:w-80">
+      <img src="images/RAmasodasultana.png" alt="Masoda Sultana" class="w-full h-64 object-cover">
+      <div class="p-6">
+        <h3 class="text-xl font-bold text-gray-800 mb-1">Masoda Sultana</h3>
+        <p class="text-blue-600 mb-3">Founder & Director of Operations</p>
+        <p class="text-gray-600 text-lg">
+          As a Director of Operations at Raydon Academy, with over 12 years of teaching experience in different reputed organisations and an MBA in Human Resource Management, I bring both academic expertise and strong leadership to the Academy. My journey as a teacher has taught me how to connect with students, understand their challenges, and design solutions that make learning easier. Now, in my role as Director of Operations, I focus on building effective teaching systems, supporting teachers, and ensuring smooth day-to-day management. I believe every student deserves quality education that is accessible, stress-free, and tailored to their growth. My role is to make sure our teachers have the tools, support, and motivation they need - so together we can deliver the best possible learning experience.
+        </p>
+      </div>
+    </div>
+
+    <div class="bg-purple-200 rounded-lg shadow-md overflow-hidden text-center w-full sm:w-80">
+      <img src="images/RAazharulkabir.png" alt="Azharul Kabir" class="w-full h-64 object-cover">
+      <div class="p-6">
+        <h3 class="text-xl font-bold text-gray-800 mb-1">Dr. Md. Azharul Kabir</h3>
+        <p class="text-blue-600 mb-3">Co-founder & Director (Logistics & Institutional Affairs)</p>
+        <p class="text-gray-600 text-lg">
+          As a Director of Logistics & Institutional Affairs at Raydon Academy, my role is to ensure that every part of our academic and operational system - from technology to student support - runs smoothly and efficiently. With years of experience in institutional management, I specialize in planning, logistics, and creating strong support structures for both students and teachers. I focus on building reliable systems that make the Academy’s services seamless, whether classes are conducted online or in-person. I believe good logistics are the foundation of excellent education - when everything works in the background, students and teachers can focus on what matters most: learning and growth.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Enrollment Section -->
+<section id="enrollment" class="py-20 bg-blue-600 text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="md:flex items-center">
+            
+            <!-- Left Side: Info -->
+            <div class="md:w-1/2 mb-10 md:mb-0">
+                <h2 class="text-3xl font-bold mb-4">Enroll Into Our School</h2>
+                <p class="text-lg mb-8 opacity-90">
+                    Ready to take the next step toward better education?<br>Fill the form on the right & we'll let you know right away!
+                </p>
+                <div class="flex items-center mb-6">
+                    <div class="bg-blue-700 w-14 h-14 flex items-center justify-center rounded-full mr-4">
+                        <i class="fa-solid fa-phone-volume text-2xl text-white"></i>
+                    </div>
+                    <div>
+                        <p class="text-sm opacity-80">Contact Us For Inquiries</p>
+                        <p class="text-xl font-semibold">+880 01712885643</p>
+                    </div>
+                </div>
+                <div class="flex items-center">
+                    <div class="bg-blue-700 w-14 h-14 flex items-center justify-center rounded-full mr-4">
+                        <i class="fas fa-clock text-4xl text-white"></i>
+                    </div>
+                    <div>
+                        <p class="text-sm opacity-80">Active Office Hours</p>
+                        <p class="text-xl font-semibold">Sunday - Thursday</p>
+                        <p class="text-xl font-semibold">10:00AM - 08:00PM</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Right Side: Google Form -->
+<div class="md:w-1/2 bg-white rounded-lg shadow-xl p-6">
+    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeFuZHt5-XIhwau_Z3fIzqIiv9FLJnmAkmhA4YZ8npHabnWWw/viewform?embedded=true" 
+            width="100%" 
+            height="720" 
+            frameborder="0" 
+            marginheight="0" 
+            marginwidth="0">
+        Loading…
+    </iframe>
+</div>
+
+        </div>
+    </div>
+</section>
+
+
+    <!-- About Section -->
+    <section id="about-us" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="md:flex items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0 md:pr-10">
+                    <h2 class="text-3xl font-bold text-gray-800 mb-4">About Raydon Academy</h2>
+                    <p class="text-lg text-gray-600 mb-6">
+Raydon Academy is the first fully online English Version and English Medium school in Bangladesh, offering world-class education from primary to higher levels.<br>
+We provide both National (English Version) and Cambridge Curriculum/Pearson Edexcel (English Medium) education through a smart, interactive online system designed for modern learners.<br>
+<strong>In addition to school education</strong>, Raydon Academy proudly operates as a professional English Language Training Centre, helping students, professionals, and job seekers improve their speaking, writing, and communication skills.<br>
+Our mission is to make quality education and English training accessible to everyone - anytime, anywhere. With qualified teachers, affordable fees, and global learning standards, we prepare students for academic excellence and real-world success.<br>
+<strong>What Makes Us Unique:</strong><br>
+First online English Version & English Medium school in Bangladesh.<br>
+Dual focus: Academic education + English language mastery.<br>
+Highly qualified and experienced teachers.<br>
+Interactive online classes with modern learning tools.<br>
+Affordable and flexible learning for all age groups.<br>
+<strong>Learn with Raydon Academy Books</strong><br>
+Raydon Academy publishes easy-to-learn,<br>
+high-quality educational books for English,<br>
+Science, Math, and more. Designed for students<br>
+from primary to college level, our books<br>
+make learning fun, simple, and effective.
+                    </p>
+                </div>
+                <div class="md:w-1/2">
+                    <div class="grid grid-cols-2 gap-4">
+
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- Contact Section -->
+<section id="contact-us" class="py-20 bg-gray-100">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <h2 class="text-4xl font-extrabold text-gray-900 mb-6">Get in Touch</h2>
+    <p class="text-lg text-gray-600 max-w-3xl mx-auto mb-16">
+      Have questions? Reach out anytime!
+    </p>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+
+      <!-- Phone -->
+      <div class="bg-blue-200 p-8 rounded-3xl shadow-lg flex flex-col items-center space-y-5 hover:shadow-2xl transition transform hover:-translate-y-2">
+        <div class="w-20 h-20 bg-blue-400 rounded-full flex items-center justify-center">
+          <i class="fa-solid fa-phone-volume fa-2xl text-purple-800"></i>
+        </div>
+        <h3 class="text-xl font-semibold text-gray-900">Call or WhatsApp</h3>
+        <p class="text-gray-700">
+          <strong>Phone:</strong> +880 1712885643<br>
+          <strong>WhatsApp:</strong> +880 1638344165<br>
+          <p></p>
+          <a href="tel:+8801712885643"
+          <button class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md font-semibold transition">Call Us</button>
+          </a>
+          <a href="https://wa.me/8801638344165?text=Hello%2C%20I%20would%20like%20to%20know%20more%20about%20Raydon%20Academy"
+          <button class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md font-semibold transition">Message Us On WhatsApp</button>
+          </a>
+        </p>
+      </div>
+
+      <!-- Location -->
+      <div class="bg-blue-200 p-8 rounded-3xl shadow-lg flex flex-col items-center space-y-5 hover:shadow-2xl transition transform hover:-translate-y-2">
+        <div class="w-20 h-20 bg-blue-400 rounded-full flex items-center justify-center">
+          <i class="fa-solid fa-location-dot fa-2xl text-purple-800"></i>
+        </div>
+        <h3 class="text-xl font-semibold text-gray-900">Our Location</h3>
+        <p class="text-gray-700">Mirpur 10, Dhaka 1216, Bangladesh</p>
+      </div>
+
+      <!-- Email -->
+      <div class="bg-blue-200 p-8 rounded-3xl shadow-lg flex flex-col items-center space-y-5 hover:shadow-2xl transition transform hover:-translate-y-2">
+        <div class="w-20 h-20 bg-blue-400 rounded-full flex items-center justify-center">
+          <i class="fa-solid fa-envelope fa-2xl text-purple-800"></i>
+        </div>
+        <h3 class="text-xl font-semibold text-gray-900">Email Us</h3>
+        <p class="text-gray-700">contact@raydonacademy.com</p>
+        <a href="mailto:contact@raydonacademy.com"
+        <button class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md font-semibold transition">Send Email</button>
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+c<!-- Footer -->
+<footer class="bg-gray-900 text-gray-300 py-12">
+  <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10">
+
+    <!-- Logo -->
+    <div>
+      <div class="flex items-center mb-4">
+        <div class="w-8 h-8 bg-blue-500 text-white rounded-full flex items-center justify-center font-bold text-lg">+</div>
+        <span class="ml-3 text-2xl font-semibold text-white">Raydon Academy</span>
+      </div>
+      <p class="text-gray-400 text-sm">Empowering learners with knowledge and creativity.</p>
+    </div>
+
+    <!-- Quick Links -->
+    <div>
+      <h3 class="text-lg font-semibold mb-4 text-white">Quick Links</h3>
+      <ul class="space-y-2 text-sm">
+        <li><a href="#home" class="hover:text-white">Home</a></li>
+        <li><a href="#our-services" class="hover:text-white">Services</a></li>
+        <li><a href="#why-choose-us" class="hover:text-white">Why Choose Us</a></li>
+        <li><a href="#our-leadership" class="hover:text-white">Leadership</a></li>
+        <li><a href="#enrollment" class="hover:text-white">Enroll</a></li>
+        <li><a href="#about-us" class="hover:text-white">About</a></li>
+        <li><a href="#contact-us" class="hover:text-white">Contact</a></li>
+      </ul>
+    </div>
+
+    <!-- Contact -->
+    <div>
+      <h3 class="text-lg font-semibold mb-4 text-white">Contact Info</h3>
+      <ul class="space-y-2 text-sm">
+        <li class="flex items-start"><i class="fas fa-map-marker-alt w-5 text-blue-400"></i>Mirpur 10, Dhaka</li>
+        <li class="flex items-center"><i class="fa-solid fa-phone-volume w-5 text-blue-400"></i>+880 01712885643</li>
+        <li class="flex items-center"><i class="fas fa-envelope w-5 text-blue-400"></i>contact@raydonacademy.com</li>
+        <li class="flex items-center"><i class="fas fa-clock w-5 text-blue-400"></i>Sun–Thu | 10AM–8PM</li>
+      </ul>
+    </div>
+
+    <!-- Socials -->
+    <div>
+      <h3 class="text-lg font-semibold mb-4 text-white">Our Socials</h3>
+      <ul class="space-y-2 text-sm">
+        <li class="flex items-center space-x-3"><i class="fab fa-facebook-f text-blue-400"></i><a href="#" class="hover:text-white">Facebook</a></li>
+        <li class="flex items-center space-x-3"><i class="fab fa-twitter text-sky-400"></i><a href="#" class="hover:text-white">Twitter</a></li>
+        <li class="flex items-center space-x-3"><i class="fab fa-instagram text-pink-400"></i><a href="#" class="hover:text-white">Instagram</a></li>
+        <li class="flex items-center space-x-3"><i class="fab fa-linkedin-in text-blue-500"></i><a href="#" class="hover:text-white">LinkedIn</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Bottom -->
+  <div class="border-t border-gray-700 mt-10 pt-6 text-sm flex flex-col md:flex-row justify-between items-center px-6">
+    <p>&copy; 2025 Raydon Academy. All rights reserved.</p>
+    <div class="space-x-6 mt-3 md:mt-0">
+      <a href="#" class="hover:text-white">Privacy Policy</a>
+      <a href="#" class="hover:text-white">Terms of Service</a>
+    </div>
+  </div>
+</footer>
+
+<!-- Rest of your code (Hero, Services, Why Us, Leadership, Enrollment, About, Contact, Footer) remains mostly same -->
+<!-- I just removed broken buttons and bumped text sizes in <h2>, <p>, etc. -->
+
+<script>
+  // Mobile menu toggle
+  const btn = document.querySelector(".mobile-menu-button");
+  const menu = document.querySelector(".mobile-menu");
+  btn.addEventListener("click", () => menu.classList.toggle("hidden"));
+</script>
+</body>
+</html>
